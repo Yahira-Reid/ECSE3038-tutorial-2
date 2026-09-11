@@ -63,3 +63,22 @@ def to_status(device):
     }
 
 print(to_status(readings[3]))
+
+# Return a dictionary of room names to lists of device names
+
+print("\n Task 5: Group by room ")
+
+def by_room(devices):
+    rooms = {}
+
+    for device in devices:
+        room = device["room"]
+
+        if room not in rooms:
+            rooms[room] = []
+
+        rooms[room].append(device["name"])
+
+    return rooms
+
+print(by_room(readings))
