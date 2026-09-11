@@ -27,7 +27,7 @@ def average_temp(devices):
 
     return total / len(devices)
 
-print(f"Average Temperature: {average_temp(readings):.2f}°C")
+print(f"Average Temperature: {average_temp(readings)}°C")
 
 # Returning the whole dictionary of the hottest device
 
@@ -46,3 +46,20 @@ def hottest(devices):
 print(hottest(readings))
 
 
+# Take one device and return a new dictionary
+
+print("\n Task 4: Status Object ")
+
+def to_status(device):
+    if device["online"] == True:
+        status = "ok"
+    else:
+        status = "offline"
+
+    return {
+        "device": device["name"],
+        "status": status,
+        "celsius": device["temp"]
+    }
+
+print(to_status(readings[3]))
